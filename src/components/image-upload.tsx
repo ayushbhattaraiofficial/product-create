@@ -31,12 +31,14 @@ export function ImageUpload({ onFileSelect, placeholder = 'Drop files here to up
             }
             reader.readAsDataURL(file)
 
+            onFileSelect(acceptedFiles[0])
+
             // If multiple, send an array, otherwise send a single file
-            if (multiple) {
-                onFileSelect(acceptedFiles)  // Pass an array of files
-            } else {
-                onFileSelect(acceptedFiles[0])  // Pass only the first file
-            }
+            // if (multiple) {
+            //     onFileSelect(acceptedFiles)  // Pass an array of files
+            // } else {
+            //     onFileSelect(acceptedFiles[0])  // Pass only the first file
+            // }
         }
     }, [preview, multiple, onFileSelect])
 
